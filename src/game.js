@@ -32,8 +32,8 @@ function Game({name, players, sendUpdateAlive, mute, unmute, reset}) {
                 <div>
                     <Text style={{fontSize:'3em'}}>Connected to <span style={{color:'grey'}}>{name}</span></Text>
                     <div>
-                        <Button style={{fontSize:'2em', margin: '0 0.5em 0 0'}} onClick={mute}>Mute</Button>
-                        <Button style={{fontSize:'2em', margin: '0 0 0.5em 0'}} onClick={unmute}>Unmute</Button>
+                        <Button style={{fontSize:'2em', margin: '0 0.5em 0 0', width:'6.5em'}} onClick={mute}>Mute</Button>
+                        <Button style={{fontSize:'2em', margin: '0 0 0.5em 0', width:'6.5em'}} onClick={unmute}>Unmute</Button>
                     </div>
                     <Button style={{fontSize:'2em'}} onClick={reset}>Reset</Button>
                 </div>
