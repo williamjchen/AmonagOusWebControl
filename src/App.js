@@ -11,12 +11,12 @@ function App() {
   const [ connectCode, setConnectCode ] = useState('')
   const [ connected, setConnected] = useState(false)
   const [ name, setName ] = useState('')
-  const [ socket, setSocket ] = useState(io('https://67.205.150.186:80'))
+  const [ socket, setSocket ] = useState(io('ec2-3-135-201-252.us-east-2.compute.amazonaws.com:8080'))
   const [ players, setPlayers ] = useState([])
 
 
   function connect(){
-    const nsocket = io('https://67.205.150.186:80')
+    const nsocket = io('ec2-3-135-201-252.us-east-2.compute.amazonaws.com:8080')
 
     nsocket.on('connect', () => {
       nsocket.emit('join', connectCode)
