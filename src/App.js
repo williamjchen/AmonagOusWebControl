@@ -11,7 +11,7 @@ function App() {
   const [ connectCode, setConnectCode ] = useState('')
   const [ connected, setConnected] = useState(false)
   const [ name, setName ] = useState('')
-  const [ socket, setSocket ] = useState(io('localhost:8080'))
+  const [ socket, setSocket ] = useState(io('ec2-3-135-201-252.us-east-2.compute.amazonaws.com:8080'))
   const [ players, setPlayers ] = useState([])
 
 
