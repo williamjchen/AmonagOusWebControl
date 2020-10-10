@@ -88,11 +88,14 @@ function PlayerIcon({name, colour, alive, onClick}) {
         color: white;
         border:none;
         background-color: ${colours[colour]};
-        width: 7em;
+        width: 8em;
         border-radius: 1.5em;
         padding: 0.6em 0.75em;
         filter: ${alive ? '' : 'brightness(0.6)'};
         margin:1em;
+        overflow: hidden;
+        text-overflow: ellipsis;
+        white-space: nowrap;
 
         &:focus, button:active {
             outline: none;

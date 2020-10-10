@@ -1,7 +1,6 @@
 import React from 'react'
 import styled from 'styled-components'
 import logo from './images/logo.png'
-import VertDiv from './components/VertDiv'
 import CodeInput from './components/CodeInput'
 import Button from './components/Button'
 import Image from './components/Image'
@@ -47,12 +46,12 @@ function Menu({connectCode, setConnectCode, connect}) {
               placeholder={'dogeyefix'} 
               setConnectCode={setConnectCode}
               value={connectCode}
-              onInput={i => {
-                setConnectCode(i.target.value)
+              onChange={i => {
+                setConnectCode(i.target.value.toLowerCase())
               }}
             />
             <ConnectButton connect={connect} onClick={connect}>connect</ConnectButton>
-          
+            <Button style={{fontSize:'0.75', marginTop:'2em'}} onClick={() => {window.open('https://discord.com/api/oauth2/authorize?client_id=757348174934573147&permissions=1138044224&scope=bot')}}>add bot to your server</Button>     
         </InnerDiv>
       </OuterDiv>
     )
