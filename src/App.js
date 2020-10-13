@@ -17,6 +17,8 @@ function App() {
 
   function connect(){
     const nsocket = io(process.env.PORT_ADDRESS)
+    console.log(process.env.PORT_ADDRESS)
+    console.log('hi')
 
     nsocket.on('connect', () => {
       nsocket.emit('join', connectCode)
