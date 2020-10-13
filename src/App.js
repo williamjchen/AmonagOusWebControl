@@ -11,12 +11,12 @@ function App() {
   const [ connectCode, setConnectCode ] = useState('')
   const [ connected, setConnected] = useState(false)
   const [ name, setName ] = useState('')
-  const [ socket, setSocket ] = useState(io('ec2-3-135-201-252.us-east-2.compute.amazonaws.com:8080'))
+  const [ socket, setSocket ] = useState()
   const [ players, setPlayers ] = useState([])
 
 
   function connect(){
-    const nsocket = io('ec2-3-135-201-252.us-east-2.compute.amazonaws.com:8080')
+    const nsocket = io(process.env.PORT_ADDRESS)
 
     nsocket.on('connect', () => {
       nsocket.emit('join', connectCode)
@@ -35,8 +35,10 @@ function App() {
     nsocket.on('end', () => {
       setConnected(false)
       nsocket.close()
-      setSocket(io('localhost:8080'))
+      setSocket()
     })
+
+    setSocket(nsocket)
   }
 
   function sendUpdateAlive(colour, alive){
