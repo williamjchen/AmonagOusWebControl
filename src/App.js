@@ -6,6 +6,9 @@ import io from 'socket.io-client';
 import Menu from './menu'
 import Game from './game'
 
+require('dotenv').config()
+console.log(process.env.REACT_APP_PORT)
+
 
 function App() {
   const [ connectCode, setConnectCode ] = useState('')
