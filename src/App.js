@@ -7,7 +7,6 @@ import Menu from './menu'
 import Game from './game'
 
 require('dotenv').config()
-console.log(process.env.REACT_APP_PORT)
 
 
 function App() {
@@ -21,7 +20,6 @@ function App() {
   function connect(){
     const nsocket = io(process.env.REACT_APP_PORT)
     console.log(process.env.REACT_APP_PORT)
-    console.log('hi')
 
     nsocket.on('connect', () => {
       nsocket.emit('join', connectCode)
